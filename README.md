@@ -30,7 +30,7 @@ Using Laravel and VueJS, create an application which shows the weather for a set
 - Navigate to `/api` folder
 - Ensure version docker installed is active on host
 - Copy .env.example: `cp .env.example .env`
-- Start docker containers `docker compose up` (add `-d` to run detached)
+- Start docker containers `docker-compose up` (add `-d` to run detached)
 - Connect to container to run commands: `docker exec -it fullstack-challenge-app-1 bash`
   - Make sure you are in the `/var/www/html` path
   - Install php dependencies: `composer install`
@@ -46,3 +46,10 @@ Using Laravel and VueJS, create an application which shows the weather for a set
 - Install javascript dependencies: `npm install`
 - Run frontend: `npm run dev`
 - Visit frontend: `http://localhost:5173`
+
+## FAQ
+### Error requesting api `The stream or file "/var/www/html/storage/logs/laravel.log" could not be opened in append mode: Failed to open stream: Permission denied`
+
+Run `root@931a3dbce756:/var/www/html# chown -R www-data:www-data *` within container.
+
+More info [here](https://stackoverflow.com/a/75320190/2775376=)

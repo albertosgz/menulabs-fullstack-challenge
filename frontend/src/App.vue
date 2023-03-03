@@ -1,18 +1,27 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-      </nav>
-    </div>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><RouterLink to="/">Home</RouterLink></li>
+      </ul>
+      <ul>
+        <li><strong>Menu Labs test</strong></li>
+      </ul>
+    </nav>
   </header>
-  <RouterView />
+  <main class="container">
+    <RouterView />
+  </main>
+  <footer class="container">
+    <small>
+      Made by
+      <a href="https://www.linkedin.com/in/albertosgz/"
+        >Alberto Sanchez Gonzalez</a
+      ></small
+    >
+  </footer>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
